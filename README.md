@@ -32,6 +32,14 @@ The easiest way to setup PythonOCC and OpenCASCADE is to do it in Ubuntu server 
 
 To install OpenCASCADE just do `apt-get install libopencascade-dev`. You can get PythonOCC from [here](http://www.pythonocc.org/download/). If you choose to build it from source [these instructions](http://code.google.com/p/pythonocc/source/browse/trunk/INSTALL) are helpful.
 
+Under Windwos it is adviced to use the Anaconda Python installation. PythonOCC and the utils can be installed using
+
+conda install -c https://conda.anaconda.org/dlr-sc pythonocc-core
+pip install git+https://github.com/tpaviot/pythonocc-utils.git#egg=pythonocc-utils
+
+Note that cadmium can also be directly installed using pip as
+pip install git+https://github.com/eelcovv/cadmium#egg=cadmium
+
 Running example code
 ---------------------
 
