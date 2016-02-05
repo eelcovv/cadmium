@@ -2,11 +2,14 @@
 
 import sys
 import math
-sys.path.append('./src')
 
 from cadmium import *
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
 
 c0 = Cylinder(radius=1, height=8, center=True)
 c1 = Cylinder(radius=1, height=8, center=True).rotate(X_axis, 45)

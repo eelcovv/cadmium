@@ -87,9 +87,9 @@ class Solid():
 
     The bounds are returns in an array [xmin, ymin, zmin, xmax, ymax, zmax]
     '''
-    box = Bnd.Bnd_Box();
-    b = BRepBndLib.BRepBndLib();
-    b.Add(self.shape, box);
+    box = Bnd.Bnd_Box()
+    b = OCC.BRepBndLib.brepbndlib()
+    b.Add(self.shape, box)
     return box.Get()
 
   def centralize(self):
