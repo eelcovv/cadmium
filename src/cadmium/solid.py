@@ -23,7 +23,7 @@ from OCC.TopAbs import *
 # For generating Triangle Mesh
 from OCC.BRepMesh import *
 from OCC.BRep import *
-from OCC.BRepTools import BRepTools
+from OCC import BRepTools
 
 from OCC.Precision import *
 

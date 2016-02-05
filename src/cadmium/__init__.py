@@ -50,9 +50,15 @@ A_CENTER = 3
 # Custom data type
 enum = 1
 
-_brep_cache_path_ = os.path.join(os.environ['HOME'],'.cadmium','brepcache')
+try:
+    _brep_cache_path_ = os.path.join(os.environ['HOME'],'.cadmium','brepcache')
+except KeyError:
+  _brep_cache_path_ = os.path.join(os.environ['USERPROFILE'],'.cadmium','brepcache')
 _brep_caching_enabled_ = True
-_font_dir_ = os.path.join(os.environ['HOME'],'.cadmium','fonts')
+try:
+    _font_dir_ = os.path.join(os.environ['HOME'],'.cadmium','fonts')
+except KeyError:
+  _font_dir_ = os.path.join(os.environ['USERPROFILE'],'.cadmium','fonts')
 _abs_fontpath_allowed_ = True
 
 if not os.path.exists(_brep_cache_path_):
