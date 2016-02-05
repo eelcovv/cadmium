@@ -8,7 +8,11 @@ from OCC.gp import *
 
 from cadmium import *
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
 
 u = Cylinder(radius=1, height=8, center=True).translate(x=4) + \
   Cylinder(radius=1, height=8, center=True).translate(x=-4)\

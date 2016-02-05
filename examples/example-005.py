@@ -54,5 +54,10 @@ x.translate(0,0,3)
 
 final = star_wheel - x
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
+
 final.toSTL(stlfname)

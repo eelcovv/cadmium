@@ -69,5 +69,10 @@ def generate_verbose(height, radius, hole_r, border, recess, num_support):
 
 bushing = generate_compact(16, 75.0/2, 4.5, 1.56,5,3)
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
+
 bushing.toSTL(stlfname)

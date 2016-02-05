@@ -8,9 +8,13 @@
 import sys
 import math
 sys.path.append('./src')
-
 from cadmium import *
-stlfname = sys.argv[1]
+
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
 
 class Spoke(Solid):
   def __init__(self, maxr, smallr, bigr, height, ratio, center=True):

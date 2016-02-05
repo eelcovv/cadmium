@@ -7,7 +7,11 @@ sys.path.append('./src')
 
 from cadmium import *
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
 
 s = Text('Cadmium',
   fontpath='DejaVuSerif.ttf', # Give full path on your system

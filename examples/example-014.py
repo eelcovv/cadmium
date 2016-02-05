@@ -4,6 +4,12 @@ sys.path.append('./src')
 from cadmium import Extrusion
 from cadmium import CadmiumException
 
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
+
 s = Extrusion(
       knotVector=[0,0,0,0,1,5,6,8,8,8,8],
       controlPoints=[
@@ -17,7 +23,7 @@ s = Extrusion(
       ],
       degree=3)
 
-s.toSTL(sys.argv[1])
+s.toSTL(stlfname)
 
 try:
   s = Extrusion(

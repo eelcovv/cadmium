@@ -6,7 +6,11 @@ sys.path.append('./src')
 
 from cadmium import *
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
 
 b0 = Box(x=4, y=4, z=4, center=True)
 b1 = Box(x=4, y=4, z=4, center=True).rotate(X_axis, 45)

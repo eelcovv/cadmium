@@ -6,7 +6,11 @@ sys.path.append('./src')
 
 from cadmium import *
 
-stlfname = sys.argv[1]
+try:
+    stlfname = sys.argv[1]
+except IndexError:
+    from os.path import basename, splitext
+    stlfname = splitext(basename(__file__))[0] + ".stl"
 
 ring = (
   Cylinder(radius=6, height=2, center=True) - \
