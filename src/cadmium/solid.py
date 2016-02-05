@@ -16,7 +16,7 @@ from OCC.BRepBuilderAPI import *
 from OCC.gp import *
 from OCC import Bnd, BRepBndLib
 
-from OCC.Utils.Topology import *
+from OCCUtils.Topology import *
 from OCC.TopoDS import *
 from OCC.TopAbs import *
 
