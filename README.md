@@ -34,13 +34,13 @@ To install OpenCASCADE just do `apt-get install libopencascade-dev`. You can get
 
 Under Windwos it is advised to use the Anaconda Python installation. PythonOCC and the utils can be installed using
 
-conda install -c https://conda.anaconda.org/dlr-sc pythonocc-core
+    conda install -c https://conda.anaconda.org/dlr-sc pythonocc-core
 
-pip install git+https://github.com/tpaviot/pythonocc-utils.git#egg=pythonocc-utils
+    pip install git+https://github.com/tpaviot/pythonocc-utils.git#egg=pythonocc-utils
 
 Note that cadmium can also be directly installed using pip as
 
-pip install git+https://github.com/eelcovv/cadmium#egg=cadmium
+    pip install git+https://github.com/eelcovv/cadmium#egg=cadmium
 
 Running example code
 ---------------------
