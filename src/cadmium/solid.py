@@ -143,7 +143,8 @@ class Solid():
 
   def _build_mesh(self, precision=0.01):
     self._reset_mesh()
-    BRepMesh_Mesh(self.shape, precision)
+    OCC.BRepMesh.brepmesh_Mesh(self.shape, precision)
+
     faces_iterator = Topo(self.shape).faces()
 
     for F in faces_iterator:
