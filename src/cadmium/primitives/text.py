@@ -7,7 +7,11 @@ import os
 import math
 import urllib
 
-import fontforge
+try:
+    import fontforge
+except ImportError as err:
+  print("Warning: {}".format(err))
+
 from OCC.gp import gp_Pnt, gp_Vec
 from OCC.TColgp import TColgp_Array1OfPnt
 from OCC.Geom import Geom_BezierCurve

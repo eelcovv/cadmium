@@ -16,14 +16,22 @@ from OCC.BRepBuilderAPI import *
 from OCC.gp import *
 from OCC import Bnd, BRepBndLib
 
-from OCC.Utils.Topology import *
+try:
+    from OCC.Utils.Topology import *
+except ImportError:
+    from OCCUtils.Topology import *
+except ImportError as err:
+    print("Warning: could not load topology: {}".format(err))
 from OCC.TopoDS import *
 from OCC.TopAbs import *
 
 # For generating Triangle Mesh
 from OCC.BRepMesh import *
 from OCC.BRep import *
-from OCC.BRepTools import BRepTools
+try:
+    from OCC.BRepTools import BRepTools
+except ImportError as err:
+    print("Warning: {}".format(err))
 
 from OCC.Precision import *
 
